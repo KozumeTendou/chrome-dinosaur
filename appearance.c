@@ -1,5 +1,6 @@
 #include <ncurses.h>
 
+///Mostra il disegno del dinosauro mentre corre
 void dinosaur1(int y, int x) {
 	mvprintw(y-4, x, "          e-e  ");
 	mvprintw(y-3, x, "        /(\\_/)");
