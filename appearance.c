@@ -1,6 +1,8 @@
+/**ncurses = è una libreria di funzioni software che gestisce il display di un'applicazione su un
+terminale a caratteri.*/
 #include <ncurses.h>
 
-///Mostra il disegno del dinosauro mentre corre
+/**Le procedure void dinosaur1 e dinosaur2 mostrano il disegno del dinosauro mentre corre, cambiando la posizione delle zampe*/
 void dinosaur1(int y, int x) {
 	mvprintw(y-4, x, "          e-e  ");
 	mvprintw(y-3, x, "        /(\\_/)");
@@ -16,7 +18,7 @@ void dinosaur2(int y, int x) {
 	mvprintw(y-1, x, " '-._, )/'");
 	mvprintw(y, x,   "      /\\");
 }
-
+/**Le procedure void cactus1 e cactus2 mostrano il disegno dei 2 cactus presenti nel gioco*/
 void cactus1(int y, int x) {
 	mvprintw(y-5, x, "    _ ");
 	mvprintw(y-4, x, " _ ( )   ");
@@ -25,7 +27,7 @@ void cactus1(int y, int x) {
 	mvprintw(y-1, x, "   |  /'");
 	mvprintw(y, x, "   | |");
 }
-
+///Colore del secondo cactus è verde
 void cactus2(int y, int x) {
 	init_pair(5,COLOR_GREEN,COLOR_BLACK);
 	attron(COLOR_PAIR(5));
@@ -38,7 +40,7 @@ void cactus2(int y, int x) {
 	mvprintw(y, x, "   | |");
 	attroff(COLOR_PAIR(5));
 }
-
+///La procedura void sun e moon mostrano il sole e la luna che cambiano al passare del tempo e il colore
 void sun(int y, int x) {
 	attron(COLOR_PAIR(6));
 	mvprintw(y-8, x, "      ;   :   ;");
@@ -66,7 +68,7 @@ void moon(int y, int x) {
 	mvprintw(y, x, "    ```                 ");
 	attroff(COLOR_PAIR(4));
 }
-
+///La procedura void showLoss mostra la scritta finale del gioco quando si perde
 void showLoss(int y, int x) {
 	mvprintw(y-6, x-15, "88");
 	mvprintw(y-5, x-15, "88");
@@ -76,10 +78,11 @@ void showLoss(int y, int x) {
 	mvprintw(y-1, x-15, "88 8b       d8  `\"Y8ba,   `\"Y8ba, ");
 	mvprintw(y, x-15, "88 \"8a,   ,a8\" aa    ]8I aa    ]8I");
 	mvprintw(y+1, x-15, "88  `\"YbbdP\"\'  `\"YbbdP\"\' `\"YbbdP\"\'");
+///Sotto la scritta LOSS viene chiesto all'utente se desidera giocare ancora o uscire dal gioco
 	mvprintw(y+3, x-15, "Press 'r' to play again!");
 	mvprintw(y+4, x-15, "Or 'q' to exit from game.");
 }
-
+///La procedura void showTrex mostra la scitta iniziale, all'accensione del gioco
 void showTrex(int x, int y) {
 	mvprintw(x-7, y-25, "  ,d");
 	mvprintw(x-6, y-25, "  88");
@@ -90,7 +93,7 @@ void showTrex(int x, int y) {
 	mvprintw(x-1, y-25, "  \"Y888 88          `\"Ybbd8\"' 8P\'     `Y8");
 }
 
-
+///La procedura clearCactus1 pulisce il cactus appena superato
 void clearCactus1(int y, int x) {
 	mvprintw(y-6, x+7, "        ");
 	mvprintw(y-5, x+8, "           ");
@@ -109,7 +112,7 @@ void clearCactus1(int y, int x) {
 		mvprintw(y, 0, "    ");
 	}
 }
-
+/**La procedura cleardinosaurDown e cleardinosaurUp pulisce il dinosauro quando ha saltato e dopo aver saltato. Permettendo la visione del dinosauro nel salto e nella discesa pulita*/
 void cleardinosaurDown(int diY, int diX) {
 	mvprintw(diY+3, diX+10, "              ");
 	mvprintw(diY+4, diX+8, "              ");
