@@ -2,7 +2,8 @@
 terminale a caratteri.*/
 #include <ncurses.h>
 
-/**Le procedure void dinosaur1 e dinosaur2 mostrano il disegno del dinosauro mentre corre, cambiando la posizione delle zampe*/
+/**Le procedure void dinosaur1 e dinosaur2 mostrano il disegno del dinosauro mentre corre, 
+cambiando la posizione delle zampe*/
 void dinosaur1(int y, int x) {
 	mvprintw(y-4, x, "          e-e  ");
 	mvprintw(y-3, x, "        /(\\_/)");
@@ -10,7 +11,7 @@ void dinosaur1(int y, int x) {
 	mvprintw(y-1, x, " '-._, )/'");
 	mvprintw(y, x,   "      \\/");
 }
-
+///int X e Y sono le coordinate dove verranno stampati i componenti per la figura del dinosauro
 void dinosaur2(int y, int x) {
 	mvprintw(y-4, x, "          e-e  ");
 	mvprintw(y-3, x, "        /(\\_/)");
@@ -29,7 +30,9 @@ void cactus1(int y, int x) {
 }
 ///Colore del secondo cactus è verde
 void cactus2(int y, int x) {
+/**init_pair = Modifica la definizione di una coppia di colori. Richiede tre argomenti: il numero della coppia di colori da modificare, il numero del colore di primo piano e il numero del colore di sfondo.*/
 	init_pair(5,COLOR_GREEN,COLOR_BLACK);
+///attron = Attiva gli attributi denominati "attrs" senza attivare o disattivare altri attributi.
 	attron(COLOR_PAIR(5));
 	mvprintw(y-6, x, "    _");
 	mvprintw(y-5, x, "   ( ) _");
@@ -38,9 +41,11 @@ void cactus2(int y, int x) {
 	mvprintw(y-2, x, "  \\  |");
 	mvprintw(y-1, x, "   | |");
 	mvprintw(y, x, "   | |");
+///attroff = Disattiva gli attributi con nome "attrs" senza influire sugli altri.
 	attroff(COLOR_PAIR(5));
 }
-///La procedura void sun e moon mostrano il sole e la luna che cambiano al passare del tempo e il colore
+/**La procedura void sun e moon mostrano il sole e la luna che cambiano al passare 
+del tempo e il colore*/
 void sun(int y, int x) {
 	attron(COLOR_PAIR(6));
 	mvprintw(y-8, x, "      ;   :   ;");

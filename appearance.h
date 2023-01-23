@@ -2,7 +2,7 @@
 #ifndef APPEARANCE_H
 #define APPEARANCE_H
 
-///Vengono dichiarate le procedure con variabili X e Y a tipologia intera. Utilizzate nel file appearance.c per la visione sullo schermo dei componenti del gioco, specificando le coordinate.
+/**Vengono dichiarate le procedure con variabili X e Y a tipologia intera. Utilizzate nel file appearance.c per la visione sullo schermo dei componenti del gioco, specificando le coordinate.*/
 void dinosaur1(int y, int x);
 void dinosaur2(int y, int x);
 void cactus1(int y, int x);

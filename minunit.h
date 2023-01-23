@@ -2,9 +2,10 @@
 
 #ifndef MINUNIT_H
 #define MINUNIT_H
-
+///string.h = libreria dove è possibile inserire stringhe, caratteri.
 #include <string.h>
 
+/**extern = viene definita una variabile esterna in un programma, la variabile è modificabile da qualsiasi funzione del programma. Presenti nel file game.c*/
 extern int tests_run;
 extern int tests_passed;
 

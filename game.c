@@ -71,11 +71,13 @@ int computePrize(int score, int usedPrize) {
 	return 0;
 }
 
-///Corpo del gioco dichiarato nella file game.h
+///Corpo del gioco dichiarato nel file game.h
 void startEngine(int highScore, struct user firstUser) {
     srand(time(NULL));
 	int x, y, diX=5, prize=0, usedPrize=0, score=0, delayTime = 300000
     , gameStatus=1, cactusNum=0;
+    /**stdscr = Lo schermo standard. All'inizializzazione di curses, viene creata una finestra predefinita chiamata stdscr, che è la dimensione dello schermo del terminale.*/
+
 	int maxX=getmaxx(stdscr);
 	x = maxX-20;
 	y = getmaxy(stdscr)-6;
@@ -85,7 +87,9 @@ void startEngine(int highScore, struct user firstUser) {
 	int jumping=-1;
     bool fire=FALSE;
     clear();
+   /**nodelay = La funzione specifica se la modalità ritardo o la modalità senza ritardo è attiva per lo schermo associato alla finestra specificata. Se è TRUE, questa schermata è impostata su No Delay Mode. Se è FALSE, questa schermata è impostata su Delay Mode. Lo stato iniziale è FALSE.*/
 	nodelay(stdscr, TRUE);
+	/**init_pair = Modifica la definizione di una coppia di colori. Richiede tre argomenti: il numero della coppia di colori da modificare, il numero del colore di primo piano e il numero del colore di sfondo.*/
   	init_pair(1,COLOR_WHITE,COLOR_BLACK);
 	init_pair(4,COLOR_BLUE,COLOR_BLACK);
 	init_pair(5,COLOR_GREEN,COLOR_BLACK);
@@ -116,7 +120,7 @@ void startEngine(int highScore, struct user firstUser) {
 		if (prize == 1) {
 			if (userInput == 'k') {
 				usedPrize++;
-				///Fire viene cambiato in vero
+				///La variabile fire viene cambiato in vero
 				fire = TRUE;
 			}
 		}
@@ -134,7 +138,7 @@ void startEngine(int highScore, struct user firstUser) {
 		}
 		// ----------
 		box(stdscr, ACS_VLINE, ACS_HLINE);
-		//for clearing screen
+		///Per pulizia dello schermo
 		cleardinosaurUp(diY, diX);
 		if (x <= 7) {
 			x = getmaxx(stdscr)-20;
@@ -167,6 +171,7 @@ void startEngine(int highScore, struct user firstUser) {
 		if (jumping==0) {
 			diY += 7;
 		}
+	///mvhline = disegna una linea che procede verso l'ultima colonna della stessa linea.
 		mvhline(y+1, 1, '-', getmaxx(stdscr)-3);
         refresh();
         clearCactus1(y, x);
@@ -176,41 +181,41 @@ void startEngine(int highScore, struct user firstUser) {
         delayTime = computeTime(delayTime);
 		userInput = 'q';
 	}
-
+///Finisce il gioco e vengono salvate le informazioni
 	endGame(score, highScore, diY, diX, firstUser);
 	attroff(COLOR_PAIR(1));
 }
 
 
 //
-// START of tests section
+///INIZIO della sezione Test
 //
 
-// sample variables to be tested
+///Variabili campione da testare
 int foo = 4;
 int bar = 5;
 
-// init tests vars
+///Inizializzazione variabili test
 int tests_run = 0;
 int tests_passed = 0;
 
-// sample test function 1
+///Funzione di test del campione 1
 static char * test_foo() {
     mu_assert("error, foo != 7", foo == 7);
 }
 
-// sample test function 2
+///Funzione di test del campione 2
 static char * test_bar() {
     mu_assert("error, bar != 5", bar == 5);
 }
 
-// put all tests here
+///Mette tuttu i test
 void all_tests() {
 	mu_run_test(test_foo);
 	mu_run_test(test_bar);
 }
 
-// call this to run all tests
+///Esegue tutti i test
 int run_all_tests(int argc, char **argv) {
 	if(argc<2 || strcmp(argv[1],"-test")!=0) {
 		return -1;
@@ -224,5 +229,5 @@ int run_all_tests(int argc, char **argv) {
 	return tests_run-tests_passed;
 }
 //
-// END of tests section
+///FINE della sezione Test
 //
