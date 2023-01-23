@@ -10,7 +10,8 @@ acquisizione e manipolazione del tempo.*/
 generali comprendenti anche i tipi di dato.*/
 #include <stdlib.h>
 
-/**Vengono richiamate le librerie urilizzate, dove vengono spegificate la procedure per il funzionamento del gioco*/
+/**Vengono richiamate le librerie urilizzate, 
+dove vengono spegificate la procedure per il funzionamento del gioco*/
 #include "menu.h"
 #include "game.h"
 #include "appearance.h"
@@ -139,7 +140,7 @@ void startEngine(int highScore, struct user firstUser) {
 			x = getmaxx(stdscr)-20;
             cactusNum = rand() % 2;
 		}
-        // if input is equal to ' ' then jump
+        /// Se l'input è uguale alla pressione della barra spaziatrice allora il dinosauro salta
 		if (userInput == ' ' && jumping<0) {
 			diY -= 7;
 			jumping = 3;
@@ -161,7 +162,7 @@ void startEngine(int highScore, struct user firstUser) {
 			x += 10;
 		}
 		gameStatus = checkGame(y, x, diY, diX);
-        // Bring back dinosaur
+        ///Riporta il dinosauro
 		jumping--;
 		if (jumping==0) {
 			diY += 7;
