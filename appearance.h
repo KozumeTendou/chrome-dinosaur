@@ -1,4 +1,4 @@
-/**La direttiva #ifndef ( o #if !defined ) controlla se un simbolo è stato dichiarato con la direttiva #define in fase di preprocessione del codice. La direttiva è la contrazione di IF Not DEFine.*/
+/**La direttiva #ifndef ( o #if !defined ) controlla se un simbolo è stato dichiarato con la direttiva #define in fase di pre-processione del codice. La direttiva è la contrazione di IF Not DEFine.*/
 #ifndef APPEARANCE_H
 #define APPEARANCE_H
 
