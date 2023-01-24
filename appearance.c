@@ -28,6 +28,7 @@ void cactus1(int y, int x) {
 	mvprintw(y-1, x, "   |  /'");
 	mvprintw(y, x, "   | |");
 }
+
 ///Colore del secondo cactus è verde
 void cactus2(int y, int x) {
 /**init_pair = Modifica la definizione di una coppia di colori. Richiede tre argomenti: il numero della coppia di colori da modificare, il numero del colore di primo piano e il numero del colore di sfondo.*/
@@ -44,8 +45,8 @@ void cactus2(int y, int x) {
 ///attroff = Disattiva gli attributi con nome "attrs" senza influire sugli altri.
 	attroff(COLOR_PAIR(5));
 }
-/**La procedura void sun e moon mostrano il sole e la luna che cambiano al passare 
-del tempo e il colore*/
+/**La procedura void sun mostra il sole che cambia al passare 
+del tempo e il colore in luna*/
 void sun(int y, int x) {
 	attron(COLOR_PAIR(6));
 	mvprintw(y-8, x, "      ;   :   ;");
@@ -59,7 +60,8 @@ void sun(int y, int x) {
 	mvprintw(y, x, "      ;   :   ;");
 	attroff(COLOR_PAIR(6));
 }
-
+/**La procedura void moon mostra la luna che cambia al passare 
+del tempo e il colore in sole*/
 void moon(int y, int x) {
 	attron(COLOR_PAIR(4));
 	mvprintw(y-8, x, "                      ");
@@ -87,7 +89,7 @@ void showLoss(int y, int x) {
 	mvprintw(y+3, x-15, "Press 'r' to play again!");
 	mvprintw(y+4, x-15, "Or 'q' to exit from game.");
 }
-///La procedura void showTrex mostra la scitta iniziale, all'accensione del gioco
+///La procedura void showTrex mostra la scritta iniziale, all'accensione del gioco
 void showTrex(int x, int y) {
 	mvprintw(x-7, y-25, "  ,d");
 	mvprintw(x-6, y-25, "  88");
@@ -117,7 +119,7 @@ void clearCactus1(int y, int x) {
 		mvprintw(y, 0, "    ");
 	}
 }
-/**La procedura cleardinosaurDown e cleardinosaurUp pulisce il dinosauro quando ha saltato e dopo aver saltato. Permettendo la visione del dinosauro nel salto e nella discesa pulita*/
+/**La procedura cleardinosaurDown pulisce il dinosauro quando ha saltato. Permettendo la visione del dinosauro nel salto pulita*/
 void cleardinosaurDown(int diY, int diX) {
 	mvprintw(diY+3, diX+10, "              ");
 	mvprintw(diY+4, diX+8, "              ");
@@ -125,7 +127,7 @@ void cleardinosaurDown(int diY, int diX) {
 	mvprintw(diY+6, diX, "                 ");
 	mvprintw(diY+7, diX, "                "); 
 }
-
+/**La procedura cleardinosaurUp pulisce il dinosauro dopo aver saltato. Permettendo la visione del dinosauro nella discesa pulita*/
 void cleardinosaurUp(int diY, int diX) {
     mvprintw(diY-7, diX+4, "         ");
 	mvprintw(diY-8, diX+1, "               ");

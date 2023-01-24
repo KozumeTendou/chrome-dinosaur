@@ -1,14 +1,18 @@
 /**ncurses = è una libreria di funzioni software che gestisce il display di un'applicazione su un
 terminale a caratteri.*/
 #include <ncurses.h>
+
 ///unistd = è il file header che consente l'accesso alle API dello standard POSIX
 #include <unistd.h>
+
 /**time = è l’header file ‘standard’ di C che fornisce un accesso standardizzato alle funzioni di
 acquisizione e manipolazione del tempo.*/
 #include <time.h>
+
 /**stdlib = è l'header file che, all'interno della libreria standard del C, dichiara funzioni e costanti di utilità generale: allocazione della memoria, controllo dei processi, e altre funzioni
 generali comprendenti anche i tipi di dato.*/
 #include <stdlib.h>
+
 ///Librerie contenenti le procedure per il funzionamento del gioco
 #include "menu.h"
 #include "game.h"

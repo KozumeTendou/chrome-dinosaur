@@ -3,8 +3,10 @@
 /**ncurses = è una libreria di funzioni software che gestisce il display di un'applicazione su un
 terminale a caratteri.*/
 #include <ncurses.h>
+
 /**stdio.h = sta per "standard input-output header", è l'header file della libreria standard del C che contiene definizioni di macro, costanti e dichiarazioni di funzioni e tipi usati per le varie operazioni di input/output. */
 #include <stdio.h>
+s
 ///Librerie contenenti le procedure per il funzionamento del gioco
 #include "menu.h"
 #include "minunit.h"
