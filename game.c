@@ -1,20 +1,18 @@
-/**ncurses = è una libreria di funzioni software che gestisce il display di un'applicazione su un
-terminale a caratteri.*/
+///ncurses = è una libreria di funzioni software che gestisce il display di un'applicazione su un
+terminale a caratteri.
 #include <ncurses.h>
 
-/**unist = è una libreria che consente l'accesso alle API dello standard POSIX*/
+///unist = è una libreria che consente l'accesso alle API dello standard POSIX
 #include <unistd.h>
 
-/**time = è l’header file ‘standard’ di C che fornisce un accesso standardizzato alle funzioni di
-acquisizione e manipolazione del tempo.*/
+///time = è l’header file ‘standard’ di C che fornisce un accesso standardizzato alle funzioni di
+acquisizione e manipolazione del tempo.
 #include <time.h>
 
-/**stdlib = è l'header file che, all'interno della libreria standard del C, dichiara funzioni e costanti di utilità generale: allocazione della memoria, controllo dei processi, e altre funzioni
-generali comprendenti anche i tipi di dato.*/
+///stdlib = è l'header file che, all'interno della libreria standard del C, dichiara funzioni e costanti di utilità generale: allocazione della memoria, controllo dei processi, e altre funzioni generali comprendenti anche i tipi di dato.
 #include <stdlib.h>
 
-/**Vengono richiamate le librerie utlizzate, 
-dove vengono specificate la procedure per il funzionamento del gioco*/
+///Vengono richiamate le librerie utlizzate, dove vengono specificate la procedure per il funzionamento del gioco
 #include "menu.h"
 #include "game.h"
 #include "appearance.h"
@@ -79,7 +77,7 @@ void startEngine(int highScore, struct user firstUser) {
     srand(time(NULL));
 	int x, y, diX=5, prize=0, usedPrize=0, score=0, delayTime = 300000
     , gameStatus=1, cactusNum=0;
-    /**stdscr = Lo schermo standard. All'inizializzazione di curses, viene creata una finestra predefinita chiamata stdscr, che è la dimensione dello schermo del terminale.*/
+    ///stdscr = Lo schermo standard. All'inizializzazione di curses, viene creata una finestra predefinita chiamata stdscr, che è la dimensione dello schermo del terminale.
 
 	int maxX=getmaxx(stdscr);
 	x = maxX-20;
@@ -92,7 +90,7 @@ void startEngine(int highScore, struct user firstUser) {
     clear();
    /**nodelay = La funzione specifica se la modalità ritardo o la modalità senza ritardo è attiva per lo schermo associato alla finestra specificata. Se è TRUE, questa schermata è impostata su No Delay Mode. Se è FALSE, questa schermata è impostata su Delay Mode. Lo stato iniziale è FALSE.*/
 	nodelay(stdscr, TRUE);
-	/**init_pair = Modifica la definizione di una coppia di colori. Richiede tre argomenti: il numero della coppia di colori da modificare, il numero del colore di primo piano e il numero del colore di sfondo.*/
+	///init_pair = Modifica la definizione di una coppia di colori. Richiede tre argomenti: il numero della coppia di colori da modificare, il numero del colore di primo piano e il numero del colore di sfondo.
   	init_pair(1,COLOR_WHITE,COLOR_BLACK);
 	init_pair(4,COLOR_BLUE,COLOR_BLACK);
 	init_pair(5,COLOR_GREEN,COLOR_BLACK);

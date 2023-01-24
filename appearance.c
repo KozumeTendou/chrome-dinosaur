@@ -1,5 +1,5 @@
-/**ncurses = è una libreria di funzioni software che gestisce il display di un'applicazione su un
-terminale a caratteri.*/
+///ncurses = è una libreria di funzioni software che gestisce il display di un'applicazione su un
+terminale a caratteri.
 #include <ncurses.h>
 
 /**Le procedure void dinosaur1 e dinosaur2 mostrano il disegno del dinosauro mentre corre, 
