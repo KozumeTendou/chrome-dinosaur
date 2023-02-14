@@ -13,6 +13,8 @@
 #include "appearance.h"
 #include "minunit.h"
 
+
+
 ///Funzione che controlla se il gioco sta per finire in questo giro di loop
 int checkGame(int y, int x, int diY, int diX) {
 	if (diY == y) {
@@ -187,9 +189,11 @@ void startEngine(int highScore, struct user firstUser) {
 ///INIZIO della sezione Test
 //
 
+
 ///Variabili campione da testare
 int foo = 4;
 int bar = 5;
+
 
 ///Inizializzazione variabili test
 int tests_run = 0;
@@ -205,10 +209,52 @@ static char * test_bar() {
     mu_assert("error, bar != 5", bar == 5);
 }
 
+void test_checkGame()
+{
+   mu_assert("ERROR in function 1 checkGame, abs != 4", abs <= 4);
+   mu_assert("ERROR in function 2 checkGame, abs != 3", abs < 4);
+   mu_assert("ERROR in function 3 checkGame, abs != 2", abs < 4);
+   mu_assert("ERROR in function 4 checkGame, abs != 1", abs < 4);
+   mu_assert("ERROR in function 5 checkGame, abs != 5", abs <= 4);
+   mu_assert("ERROR in function 6 checkGame, abs != 6", abs < 4);
+   mu_assert("ERROR in function 7 checkGame, abs != -1", abs < 4);
+   mu_assert("ERROR in function 8 checkGame, abs != 0", abs < 4);
+   mu_assert("ERROR in function 9 checkGame, abs != 8", abs < 4);
+   mu_assert("ERROR in function 10 checkGame, abs != 9", abs < 4);
+}
+void test_computeTime()
+{
+   mu_assert("ERROR in function 1 computeTime, delayTime != 250000", delayTime >= 250000);
+   mu_assert("ERROR in function 2 computeTime, delayTime != 200000", delayTime >= 200000);
+   mu_assert("ERROR in function 3 computeTime, delayTime != 1000", delayTime -= 1000);
+   mu_assert("ERROR in function 4 computeTime, delayTime != 600", delayTime -= 600);
+   mu_assert("ERROR in function 5 computeTime, delayTime != 200", delayTime -= 200);
+   mu_assert("ERROR in function 6 computeTime, delayTime != 300", delayTime >= 300);
+   mu_assert("ERROR in function 7 computeTime, delayTime != 400", delayTime >= 400);
+   mu_assert("ERROR in function 8 computeTime, delayTime != 210000", delayTime >= 210000);
+   mu_assert("ERROR in function 9 computeTime, delayTime != 230000", delayTime >= 230000);
+   mu_assert("ERROR in function 10 computeTime, delayTime != 800", delayTime >= 800);
+}
+void test_computePrize()
+{
+   mu_assert("ERROR in function 1 computePrize, score != 20", score >= 20);
+   mu_assert("ERROR in function 2 computePrize, score != 30", score == 30);
+   mu_assert("ERROR in function 3 computePrize, score != 40", score <= 40);
+   mu_assert("ERROR in function 4 computePrize, score != 60", score >= 60);
+   mu_assert("ERROR in function 5 computePrize, score != 70", score == 70);
+   mu_assert("ERROR in function 6 computePrize, score != 80", score <= 80);
+   mu_assert("ERROR in function 7 computePrize, score != 100", score >= 100);
+   mu_assert("ERROR in function 8 computePrize, score != 110", score == 110);
+   mu_assert("ERROR in function 9 computePrize, score != 120", score <= 120);
+}
+
 ///Mette tutti i test
 void all_tests() {
 	mu_run_test(test_foo);
 	mu_run_test(test_bar);
+	mu_run_test(test_checkGame);
+	mu_run_test(test_computeTime);
+	mu_run_test(test_computePrize);
 }
 
 ///Esegue tutti i test
